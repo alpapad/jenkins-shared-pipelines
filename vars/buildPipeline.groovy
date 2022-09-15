@@ -6,7 +6,7 @@ def call(Closure body) {
     body()
 
     pipeline {
-        agent { label "linux" }
+        agent any
         stages {
             stage("echo parameters") {
                 steps {
@@ -15,7 +15,6 @@ def call(Closure body) {
             }
             stage("Prepare Build Environment") {
                 steps {
-                    prepareBuildEnvironment()
                     echo "Prepare Build Environment ${pipelineParams.email}"
                 }
             }
