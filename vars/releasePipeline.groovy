@@ -15,7 +15,6 @@ def call(Closure body) {
             }
             stage("Prepare Build Environment") {
                 steps {
-                    prepareBuildEnvironment()
                     echo "Prepare Build Environment ${pipelineParams.email}"
                 }
             }
